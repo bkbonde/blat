@@ -1,7 +1,9 @@
 DESTDIR?=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 all:
-	mkdir -p ${DESTDIR}/{bin,include,lib}
+	mkdir -p ${DESTDIR}/bin
+	mkdir -p ${DESTDIR}/include
+	mkdir -p ${DESTDIR}/lib
 	cd src/lib && ${MAKE}
 	cd src/jkOwnLib && ${MAKE}
 	cd src/blat && $(MAKE)
